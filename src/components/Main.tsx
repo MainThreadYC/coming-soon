@@ -1,4 +1,5 @@
-import { ChangeEvent, useState } from "react";
+import { validateEmail } from "@/utils/validators";
+import { ChangeEvent, useEffect, useState } from "react";
 
 const Main:React.FC = () => {
     const [email, setEmail] = useState("");
@@ -9,6 +10,10 @@ const Main:React.FC = () => {
         e.preventDefault();
         alert("Sent!");
     }
+
+    useEffect(() => {
+        setIsButtonDisabled(!validateEmail(email));
+    }, [email])
 
     return  (
         <main>
