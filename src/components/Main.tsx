@@ -1,19 +1,28 @@
 import { validateEmail } from "@/utils/validators";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { toast } from 'react-toastify';
 
 const Main:React.FC = () => {
     const [email, setEmail] = useState("");
     const [isBtnDisabled, setIsButtonDisabled] = useState(true);
     const onUpdateEmail = (e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
+
+    const toastId:any = useRef(null);
+
+    const clearForm = () => {
+        setEmail("");
+    }
     
     const onSubmitForm = (e:ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
-        alert("Sent!");
+        //await WebServices.registerEmail(email);
+        if(!toast.isActive(toastId.current)) toastId.current = toast("Thank you!");
+        clearForm();
     }
 
     useEffect(() => {
         setIsButtonDisabled(!validateEmail(email));
-    }, [email])
+    }, [email]);
 
     return  (
         <main className="flex flex-col justify-center items-center">
