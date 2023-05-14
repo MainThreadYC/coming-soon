@@ -24,9 +24,9 @@ const Header:React.FC = () => {
                     <div className="absolute top-2 right-2 z-20">
                         <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
                     </div>
-                    <div id="mobile-menu-items" className={`absolute opacity-0 top-0 -left-full w-full h-screen bg-[#0B002A] z-10 transition-all ease-in-out ${isMenuOpen ? '-left-0 opacity-90' : ''}`}>
+                    <div id="mobile-menu-items" className={`absolute opacity-0 top-0 -left-full w-full h-screen bg-[#0B002A] z-10 transition-all ease-in-out ${isMenuOpen ? 'left-0 opacity-90' : ''}`}>
                         <ul className="w-full p-6 pt-16">
-                        {menuItems.map((item, index) => 
+                        {menuItems.map((item) => 
                             <li className="text-xl mb-12 underline" key={item.name}>
                                 <a href={item.href} target="_blank">{item.name}</a>
                             </li>)
