@@ -4,7 +4,7 @@ import { JetBrains_Mono } from 'next/font/google'
 const inter = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Event Drop',
+  title: 'MainThread',
   description: 'Coming Soon',
 }
 
