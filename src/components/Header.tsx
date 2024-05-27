@@ -10,8 +10,8 @@ const Header:React.FC = () => {
     return (
         <div className="absolute top-0 left-0 w-full h-[60px] bg-[#0B002A] flex items-center justify-between px-2 text-white md:px-6">
             <Link href="/" id="event-drop-header" className="flex items-center justify-center select-none">
-                <Image src="/event-drop-home.png" alt="Event Drop Icon" width={50} height={50} />
-                <h1 className="ml-1">Event Drop</h1>
+                {/* <Image src="/event-drop-home.png" alt="MainThread Icon" width={50} height={50} /> */}
+                <h1 className="ml-1">MainThread</h1>
             </Link>
             <ul className="hidden items-center md:flex">
             {menuItems.map((item, index) => 
